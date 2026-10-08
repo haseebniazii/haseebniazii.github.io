@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Haseeb Khan — Machine Learning & Prediction Systems</title>
+<title>Haseeb Khan</title>
 <meta name="description" content="Haseeb Khan — Computer Science student building practical prediction systems with Python, Machine Learning and Data Analysis." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -342,6 +342,8 @@
   }
   .project-links a:hover{ color:var(--amber-soft); }
 
+  .filter-btn .count{ opacity:.6; margin-left:4px; font-size:11px; }
+  .nb-dots .nb-cat{ font-weight:500; background:var(--panel-2); color:var(--amber-soft); font-family:var(--mono); font-size:10px; padding:1px 8px; border-radius:4px; margin-left:auto; line-height:1.5; }
   .project-more{
     grid-column:1 / -1; text-align:center; margin-top:6px;
   }
@@ -439,14 +441,14 @@
   <nav class="wrap">
     <a href="#home" class="brand"><span class="dot"></span><span id="brand-name">Haseeb Khan</span></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#home" class="nav-link active">home</a></li>
-      <li><a href="#about" class="nav-link">about</a></li>
-      <li><a href="#projects" class="nav-link">projects</a></li>
-      <li><a href="#skills" class="nav-link">skills</a></li>
-      <li><a href="#experience" class="nav-link">experience</a></li>
-      <li><a href="#resume" class="nav-link">resume</a></li>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">contact me →</a>
+    <a href="#contact" class="nav-cta">Contact me →</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
   </nav>
 </header>
@@ -471,7 +473,7 @@
       <div class="chart-card">
         <div class="chart-head">
           <span><span class="tag">model:</span> LinearRegression()</span>
-          <span>R² = 0.91</span>
+          <span>illustrative</span>
         </div>
         <svg viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
@@ -506,7 +508,7 @@
           <path class="predict-line" d="M10,195 C120,175 180,120 220,110 C300,90 350,50 410,25"/>
         </svg>
         <div class="metric-row">
-          <div><span class="m-val" id="stat-projects">4+</span><span class="m-label">notebooks shipped</span></div>
+          <div><span class="m-val" id="stat-projects">13</span><span class="m-label">ML projects</span></div>
           <div><span class="m-val">Python</span><span class="m-label">primary stack</span></div>
           <div><span class="m-val">2028</span><span class="m-label">expected grad</span></div>
         </div>
@@ -535,8 +537,8 @@
           </div>
 
           <div class="stat-strip">
-            <div class="stat-box"><div class="num">4+</div><div class="lbl">ML PROJECTS</div></div>
-            <div class="stat-box"><div class="num">6+</div><div class="lbl">CORE LIBRARIES</div></div>
+            <div class="stat-box"><div class="num">18</div><div class="lbl">PUBLIC PROJECTS</div></div>
+            <div class="stat-box"><div class="num">13</div><div class="lbl">ML MODELS BUILT</div></div>
             <div class="stat-box"><div class="num">2028</div><div class="lbl">GRADUATING</div></div>
           </div>
 
@@ -555,7 +557,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">projects</div>
         <h2>Prediction systems, end to end.</h2>
-        <p>Every project below runs the full workflow — cleaning, EDA, feature engineering, modeling, evaluation. Built as Jupyter notebooks, all open source.</p>
+        <p>Browse by type — ML notebooks (EDA → model → evaluation), end-to-end apps with APIs, AI projects, and systems work. All open source on GitHub.</p>
       </div>
 
       <div class="filter-row reveal" id="filter-row"></div>
@@ -634,12 +636,12 @@ const CONFIG = {
   status: "open to ML / AI internships",
 
   // ---- ROLES: cycles one by one in the animated typewriter line under the headline ----
-  roles: ["Machine Learning", "Python Development", "Data Analysis", "Front-End Development", "AI Enthusiast"],
+  roles: ["Machine Learning", "Python Development", "Data Analysis", "Deep Learning & GenAI", "Front-End Development"],
 
   about: [
-    "I'm a Computer Science student focused on <strong>Machine Learning and Artificial Intelligence</strong>, building practical, data-driven solutions to real-world problems.",
-    "I work with <strong>Python, NumPy, Pandas, Matplotlib</strong> and Data Analysis to turn raw data into meaningful insights and predictive models — from data cleaning and EDA to feature engineering, model training, and evaluation.",
-    "My technical background also includes Web Development and Front-End Development, giving me a broader view of how models eventually ship as products. But my primary direction is <strong>ML and AI</strong>."
+    "I'm a BSCS student focused on <strong>Machine Learning, Deep Learning, and Generative AI</strong>. My journey started with ML and data analysis, working across the full workflow with Python, NumPy, Pandas, Matplotlib, Seaborn and Scikit-learn — from data cleaning and EDA to feature engineering, model training, and evaluation.",
+    "I'm now expanding into <strong>Deep Learning with PyTorch</strong> and exploring Generative AI and LLMs — Transformers, embeddings, RAG, tool calling, AI agents, fine-tuning and deployment.",
+    "I learn by understanding concepts, working with real-world datasets, building projects, and experimenting with different approaches. My background in web development and systems programming helps me think about how models ship as real products."
   ],
 
   openTo: [
@@ -651,81 +653,103 @@ const CONFIG = {
   ],
 
   // ---- PROJECTS: add a new object to this array to add a new card ----
+  // category must be one of: "ML", "End-to-End", "AI", "Systems"  (a new name creates a new tab automatically)
+  // use  repo: "repo-name"  (GitHub link is built for you)  or  github: "full-url"
   projects: [
-    {
-      title: "Heart Disease Prediction",
-      description: "Predicts the likelihood of heart disease from patient health data using a Logistic Regression classifier.",
-      tags: ["Python", "Logistic Regression", "Classification"],
-      category: "ML",
-      github: "https://github.com/haseebniazii/heart-disease-prediction",
-      demo: ""
-    },
-    {
-      title: "Insurance Cost Prediction",
-      description: "Regression pipeline that predicts individual insurance charges from demographic and health features.",
-      tags: ["Python", "Regression", "Feature Engineering"],
-      category: "ML",
-      github: "https://github.com/haseebniazii/insurance-cost-prediction",
-      demo: ""
-    },
-    {
-      title: "Ford Car Price Prediction",
-      description: "Predicts used Ford car prices using regression models, with Label Encoding and One-Hot Encoding for categorical data.",
-      tags: ["Python", "Regression", "Encoding"],
-      category: "ML",
-      github: "https://github.com/haseebniazii/ford-car-price-prediction",
-      demo: ""
-    },
-    {
-      title: "Student Placement Prediction",
-      description: "A machine learning model that predicts whether a student will be placed based on academic and extracurricular features.",
-      tags: ["Python", "EDA", "Supervised Learning"],
-      category: "ML",
-      github: "https://github.com/haseebniazii/student-placement-prediction",
-      demo: ""
-    }
+    // ---------- End-to-End (model + app/API) ----------
+    { title: "AI-Powered Fraud Detection", repo: "ai-powered-fraud-detection", category: "End-to-End",
+      description: "Financial transaction fraud detection using machine learning, served through a FastAPI backend.",
+      tags: ["Python", "Machine Learning", "FastAPI"], snippet: "uvicorn app:app --reload", demo: "" },
+    { title: "Loan Prediction System", repo: "loan-prediction-system", category: "End-to-End",
+      description: "A machine learning web application that predicts loan approval using an SVC model.",
+      tags: ["Python", "SVC", "Web App"], snippet: "model.predict(applicant)", demo: "" },
+
+    // ---------- AI ----------
+    { title: "ChatBuddy AI", repo: "chatbuddy-ai", category: "AI",
+      description: "An AI-powered chatbot with multiple conversation modes, chat history, and an interactive web interface.",
+      tags: ["AI Chatbot", "HTML", "JavaScript"], snippet: "chat.send(message, mode)", demo: "" },
+
+    // ---------- ML (notebooks: EDA → model → evaluation) ----------
+    { title: "NYC Airbnb Room-Type Classification", repo: "NYC-Airbnb-Room-Type-Classification", category: "ML",
+      description: "Predicts Airbnb room types from NYC listings with EDA, preprocessing, model comparison, cross-validation and hyperparameter tuning.",
+      tags: ["Classification", "Cross-Validation", "Hyperparameter Tuning"] },
+    { title: "Mental Health Score Prediction", repo: "Mental-Health-Score", category: "ML",
+      description: "Predicts mental health scores using data analysis, preprocessing, and machine learning techniques.",
+      tags: ["Regression", "Preprocessing", "EDA"] },
+    { title: "Customer Segmentation (K-Means)", repo: "customer-segmentation-kmeans", category: "ML",
+      description: "Customer segmentation using K-Means clustering — unsupervised machine learning.",
+      tags: ["K-Means", "Unsupervised Learning", "Clustering"], snippet: "KMeans(n_clusters=k).fit(X)" },
+    { title: "Customer Churn Prediction", repo: "customer-churn-prediction", category: "ML",
+      description: "Machine learning project to predict customer churn.",
+      tags: ["Python", "Classification"] },
+    { title: "Medical Insurance Cost Prediction", repo: "medical-insurance-cost-prediction", category: "ML",
+      description: "Predicts medical insurance costs using Random Forest Regression.",
+      tags: ["Random Forest", "Regression"], snippet: "RandomForestRegressor().fit(X, y)" },
+    { title: "Student Placement Prediction", repo: "student-placement-prediction", category: "ML",
+      description: "Predicts student placement from various academic features using Python.",
+      tags: ["Python", "Classification", "Supervised Learning"] },
+    { title: "Credit Card Fraud Detection", repo: "Credit-Card-Fraud-Detection", category: "ML",
+      description: "Classification project to detect fraudulent credit card transactions using Logistic Regression.",
+      tags: ["Logistic Regression", "Classification"], snippet: "LogisticRegression().fit(X, y)" },
+    { title: "Gold Price Prediction", repo: "Gold-Price-Prediction", category: "ML",
+      description: "Regression project predicting gold prices from historical market data with Scikit-Learn.",
+      tags: ["Regression", "Scikit-Learn"] },
+    { title: "Car Price Prediction", repo: "Car-Price-Prediction", category: "ML",
+      description: "Regression project predicting car prices from vehicle features using Scikit-Learn.",
+      tags: ["Regression", "Scikit-Learn"] },
+    { title: "Wine Quality Prediction", repo: "wine-quality-prediction", category: "ML",
+      description: "Predicts wine quality from chemical properties with Python and Scikit-Learn.",
+      tags: ["Scikit-Learn", "Supervised Learning"] },
+    { title: "Heart Disease Prediction", repo: "heart-disease-prediction", category: "ML",
+      description: "Predicts heart disease using Logistic Regression.",
+      tags: ["Logistic Regression", "Classification"] },
+    { title: "Ford Car Price Prediction", repo: "ford-car-price-prediction", category: "ML",
+      description: "Predicts Ford car prices using regression models with Label Encoding and One-Hot Encoding.",
+      tags: ["Regression", "Encoding", "Feature Engineering"] },
+    { title: "Insurance Cost Prediction", repo: "insurance-cost-prediction", category: "ML",
+      description: "Predicts insurance charges using regression techniques in Python.",
+      tags: ["Regression", "Python"] },
+
+    // ---------- Systems (university CS work) ----------
+    { title: "KStats — xv6-RISC-V Kernel Statistics", repo: "KStats-Lightweight-Kernel-Statistics-for-xv6-RISC-V", category: "Systems",
+      description: "University OS project extending MIT xv6-RISC-V with five custom kernel monitoring, diagnostic and reliability modules.",
+      tags: ["Operating Systems", "xv6", "RISC-V"], snippet: "$ make qemu" },
+    { title: "Mini RISC-V Instruction Emulator", repo: "Mini-RISC-V-Instruction-Emulator", category: "Systems",
+      description: "A simple RISC-V emulator demonstrating fetch, decode, registers, ALU and memory operations.",
+      tags: ["RISC-V", "Computer Architecture"], snippet: "emu.fetch(); emu.decode()" }
   ],
 
   // ---- SKILLS: grouped by category ----
   skills: {
-    "Machine Learning": ["Scikit-Learn", "Logistic Regression", "Linear Regression", "Classification", "Supervised Learning", "Feature Engineering"],
-    "Data & Analysis": ["Pandas", "NumPy", "Matplotlib", "Exploratory Data Analysis", "Data Visualization", "Data Analysis"],
-    "Languages & Web": ["Python", "C++", "Java", "SQL", "JavaScript", "HTML", "CSS", "Front-End Development"]
+    "Machine Learning": ["Scikit-Learn", "Linear Regression", "Logistic Regression", "Random Forest", "SVC", "K-Means Clustering", "Classification", "Regression", "Supervised Learning", "Unsupervised Learning", "Feature Engineering", "Cross-Validation", "Hyperparameter Tuning"],
+    "Data & Analysis": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Exploratory Data Analysis", "Data Visualization", "Data Analysis", "SQL"],
+    "Languages": ["Python", "C++", "Java", "JavaScript", "Assembly"],
+    "Web & Deployment": ["FastAPI", "HTML", "CSS", "React", "Tailwind", "Front-End Development", "WordPress"],
+    "Tools": ["Git", "GitHub", "Jupyter", "VS Code", "Linux", "Docker"],
+    "Learning Now →": ["PyTorch", "Deep Learning", "Generative AI", "LLMs", "Transformers", "Embeddings", "RAG", "AI Agents", "Fine-tuning"]
   },
 
   // ---- TIMELINE / EXPERIENCE ----
+  // (dates come from your GitHub repo activity — edit freely)
   timeline: [
-    {
-      date: "Oct 2024 — Present",
-      title: "BSCS, University of Mianwali",
-      description: "Studying Computer Science with a growing specialization in Machine Learning and Artificial Intelligence. Expected graduation: October 2028."
-    },
-    {
-      date: "2024",
-      title: "Started with Web Development",
-      description: "Built a foundation in Front-End Development and WordPress — learning how software actually reaches users."
-    },
-    {
-      date: "2025",
-      title: "Shifted focus to Machine Learning",
-      description: "Picked up Python's data stack — NumPy, Pandas, Matplotlib, Scikit-Learn — and started practicing the full ML workflow on real datasets."
-    },
-    {
-      date: "2025 — Present",
-      title: "Shipping prediction projects",
-      description: "Built and published multiple end-to-end ML projects (heart disease, insurance cost, car price, student placement) covering EDA, feature engineering, and model evaluation."
-    },
-    {
-      date: "Now",
-      title: "Deepening Deep Learning & AI",
-      description: "Gradually expanding into Deep Learning and broader AI, while staying open to ML/AI internships and freelance collaborations."
-    }
+    { date: "Oct 2024 — Present", title: "BSCS, University of Mianwali",
+      description: "Studying Computer Science with a specialization focus on Machine Learning and AI. Expected graduation: October 2028." },
+    { date: "Foundation", title: "Web & Front-End Development",
+      description: "Started with Front-End Development and WordPress — learning how software actually reaches users." },
+    { date: "Aug 2026", title: "Published first ML projects",
+      description: "Insurance cost, Ford car price and heart disease prediction — regression and classification with the full EDA → model → evaluation workflow." },
+    { date: "Aug — Sep 2026", title: "Scaled up to 13 ML projects",
+      description: "Added fraud detection, churn, K-Means segmentation, Airbnb classification with cross-validation and tuning, gold and wine prediction, and more." },
+    { date: "Sep — Oct 2026", title: "End-to-end & systems work",
+      description: "Shipped ML apps (FastAPI fraud detection, loan prediction), an AI chatbot, and university systems projects: an xv6 kernel-stats extension and a RISC-V emulator." },
+    { date: "Now", title: "Deep Learning → Generative AI",
+      description: "Learning PyTorch and exploring Transformers, embeddings, RAG, AI agents, fine-tuning and LLM deployment." }
   ],
 
   resumeUrl: "#",  // <-- replace with a link to your resume PDF
 
   contact: [
-    { icon: "✉️", label: "email", value: "your-email@example.com", href: "mailto:your-email@example.com" },
+    { icon: "✉️", label: "email", value: "haseebniiazi@gmail.com", href: "mailto:haseebniiazi@gmail.com" },
     { icon: "🐙", label: "github", value: "github.com/haseebniazii", href: "https://github.com/haseebniazii" },
     { icon: "💼", label: "linkedin", value: "linkedin.com/in/haseebniiazi", href: "https://www.linkedin.com/in/haseebniiazi/" },
     { icon: "📍", label: "location", value: "Mianwali, Punjab, Pakistan", href: "" }
@@ -749,45 +773,63 @@ document.getElementById('about-copy').innerHTML = CONFIG.about.map(p => `<p>${p}
 // open-to chips
 document.getElementById('open-to-chips').innerHTML = CONFIG.openTo.map(o => `<span class="chip">${o}</span>`).join('');
 
-// projects + filters
-const categories = ["All", ...new Set(CONFIG.projects.map(p => p.category))];
-document.getElementById('filter-row').innerHTML = categories.map((c,i) =>
-  `<button class="filter-btn ${i===0?'active':''}" data-cat="${c}">${c}</button>`
-).join('');
+// projects + filters (tabs with counts; "All" shows a first batch with a Show-all button)
+const ALL_LIMIT = 6;
+let showAll = false, currentCat = "All";
+const catOrder = ["ML", "End-to-End", "AI", "Systems"];
+const catsFound = [...new Set(CONFIG.projects.map(p => p.category))];
+const categories = ["All", ...catOrder.filter(c => catsFound.includes(c)), ...catsFound.filter(c => !catOrder.includes(c))];
 
-function nbSnippet(title){
+function renderFilters(){
+  document.getElementById('filter-row').innerHTML = categories.map(c => {
+    const n = c === "All" ? CONFIG.projects.length : CONFIG.projects.filter(p => p.category === c).length;
+    return `<button class="filter-btn ${c===currentCat?'active':''}" data-cat="${c}">${c} <span class="count">${n}</span></button>`;
+  }).join('');
+}
+
+const defaultSnippets = { "ML":"model.fit(X_train, y_train)", "End-to-End":"app.run(model)", "AI":"llm.invoke(prompt)", "Systems":"$ make run" };
+function nbSnippet(p){
+  const code = p.snippet || defaultSnippets[p.category] || "run()";
+  const label = (p.category === "ML") ? '<span class="in">In [1]:</span> ' : '';
   return `<div class="nb-mock">
-    <div class="nb-dots"><span></span><span></span><span></span></div>
-    <div class="nb-cell"><span class="in">In [1]:</span> model.fit(X_train, y_train)</div>
+    <div class="nb-dots"><span></span><span></span><span></span><b class="nb-cat">${p.category}</b></div>
+    <div class="nb-cell">${label}${code}</div>
   </div>`;
 }
 
-function renderProjects(filter){
+function renderProjects(){
   const grid = document.getElementById('project-grid');
-  const list = filter === "All" ? CONFIG.projects : CONFIG.projects.filter(p => p.category === filter);
-  grid.innerHTML = list.map(p => `
+  let list = currentCat === "All" ? CONFIG.projects : CONFIG.projects.filter(p => p.category === currentCat);
+  const total = list.length;
+  const capped = currentCat === "All" && !showAll && total > ALL_LIMIT;
+  if(capped) list = list.slice(0, ALL_LIMIT);
+  grid.innerHTML = list.map(p => {
+    const gh = p.github || (p.repo ? `https://github.com/haseebniazii/${p.repo}` : "");
+    return `
     <div class="project-card reveal in">
-      ${nbSnippet(p.title)}
+      ${nbSnippet(p)}
       <div class="project-body">
         <h3>${p.title}</h3>
         <p>${p.description}</p>
         <div class="tag-list">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
         <div class="project-links">
-          ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener">⌥ Source</a>` : ''}
+          ${gh ? `<a href="${gh}" target="_blank" rel="noopener">⌥ Source</a>` : ''}
           ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">⌾ Live Demo</a>` : ''}
         </div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('') + (capped ? `<div class="project-more"><button class="btn btn-ghost" id="show-all-btn">Show all ${total} projects ↓</button></div>` : '');
 }
-renderProjects("All");
+renderFilters(); renderProjects();
 
 document.getElementById('filter-row').addEventListener('click', e => {
   const btn = e.target.closest('.filter-btn');
   if(!btn) return;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderProjects(btn.dataset.cat);
+  currentCat = btn.dataset.cat; showAll = false;
+  renderFilters(); renderProjects();
+});
+document.getElementById('project-grid').addEventListener('click', e => {
+  if(e.target.closest('#show-all-btn')){ showAll = true; renderProjects(); }
 });
 
 // skills
